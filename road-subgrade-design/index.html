@@ -116,6 +116,42 @@ header.hero, .hero { position: relative !important; }
 .leaflet-control { z-index: 800 !important; }
 .leaflet-container { z-index: 1 !important; }
 </style>
+<style id="inline-link-style">
+p a[href^="/"]:not(.cta-btn):not(.hero-cta){color:var(--accent,#8B4513) !important;text-decoration:underline !important;text-decoration-color:rgba(29,78,216,.45);text-underline-offset:2px;font-weight:600}
+p a[href^="/"]:not(.cta-btn):not(.hero-cta):hover{text-decoration-color:currentColor;opacity:.85}
+</style>
+<style id="navbar-compact-fix">
+/* Compactar navbar para que el menú entre completo */
+.navbar{padding:.65rem 1rem !important}
+.navbar .nav{gap:.55rem !important}
+.nav-item{font-size:.74rem !important;letter-spacing:.01em !important}
+.nav-item.has-dd .nav-cat-link{padding:.4rem .25rem !important}
+.nav-item.has-dd .nav-arrow{font-size:.7rem !important;margin-left:.15rem !important}
+.cta-btn{padding:.45rem .8rem !important;font-size:.72rem !important;letter-spacing:.03em !important}
+.logo-box,.brand-name,.brand{font-size:.82rem !important}
+.logo-text .main{font-size:.95rem !important}
+.logo-text .sub{font-size:.72rem !important}
+/* Para layouts aberdeen/classic con clase distinta */
+header nav a,.menu a{font-size:.78rem !important}
+@media (max-width:1100px){
+  .nav-item{font-size:.7rem !important}
+  .navbar .nav{gap:.4rem !important}
+  .cta-btn{padding:.4rem .65rem !important;font-size:.68rem !important}
+}
+</style>
+<style id="layout-defensive">
+html,body{overflow-x:hidden;max-width:100vw}
+body>*{max-width:100vw}
+@media (min-width:901px){
+  aside{position:relative}
+  aside+main,aside~main,aside~div>main{margin-left:0}
+  .content-area{display:flex;gap:1rem}
+}
+@media (max-width:900px){
+  aside{width:100% !important;position:static !important;height:auto !important}
+  .navbar{flex-wrap:wrap}
+}
+</style>
 </head><body>
 
 <header class="header">
@@ -144,7 +180,7 @@ header.hero, .hero { position: relative !important; }
 
         <h2>Approach and scope</h2><div>We follow ASTM D1883 for CBR testing and ASTM D698 for standard Proctor compaction, adapting the effort to the design traffic level. Fullerton's Mediterranean climate means the subgrade dries out in summer but can become nearly saturated during winter storms, so we always run soaked CBR values as well. The Caltrans HDM methodology serves as our reference for structural number calculations, but we cross-check it with local experience. On a recent arterial widening project near the Fullerton Transportation Center, the in-situ CBR came in at 4 instead of the assumed 8, which forced a redesign of the base thickness. That is exactly why we insist on field verification. For sections with suspect drainage we incorporate evaluacion-pavimentos to assess the existing pavement structure and recommend targeted rehabilitation. In residential streets with shallow utilities we also coordinate with the consolidacion analysis to ensure long-term settlement does not damage the new pavement profile.</div>
         <figure style="margin:1.5rem auto;max-width:60%;border-radius:6px;overflow:hidden;border:1px solid #E5E5E5"></figure>
-        <h2>Site-specific factors</h2><p>Fullerton recorded a magnitude 5.1 earthquake in 1933 (the Long Beach event), and the city lies within the influence zone of the Whittier and Elsinore faults. That seismic context matters for road subgrade design because loose saturated sands can liquefy beneath a pavement section during strong shaking. We have mapped several areas near the Santa Ana River channel where the groundwater table sits less than 10 feet deep, increasing that risk. A standard subgrade design that ignores cyclic softening will fail when the next moderate earthquake hits. We integrate respuesta-sismica analyses to evaluate site amplification and recommend mitigation measures like deep soil mixing or drainage improvements before placing the pavement.</p>
+        <h2>Site-specific factors</h2><p>Fullerton recorded a magnitude 5.1 earthquake in 1933 (the Long Beach event), and the city lies within the influence zone of the Whittier and Elsinore faults. That seismic context matters for road subgrade design because loose saturated sands can liquefy beneath a pavement section during strong shaking. We have mapped several areas near the Santa Ana River channel where the groundwater table sits less than 10 feet deep, increasing that risk. A standard subgrade design that ignores cyclic softening will fail when the next moderate earthquake hits. We integrate respuesta-sismica analyses to evaluate site amplification and recommend mitigation measures like <a href="/deep-soil-mixing/">deep soil mixing</a> or drainage improvements before placing the pavement.</p>
 
         
     <section class="block mid-cta-9642-9642" style="padding:2rem 0">
