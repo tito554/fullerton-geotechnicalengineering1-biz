@@ -138,7 +138,7 @@ header nav a,.menu a{font-size:.78rem !important}
 }
 </style>
 <style id="layout-defensive">
-html,body{overflow-x:hidden;max-width:100vw}
+body{overflow-x:clip;max-width:100vw}
 body>*{max-width:100vw}
 @media (min-width:901px){
   aside{position:relative}
@@ -149,6 +149,62 @@ body>*{max-width:100vw}
   aside{width:100% !important;position:static !important;height:auto !important}
   .navbar{flex-wrap:wrap}
 }
+</style>
+<style id="navbar-fixed-override">
+nav.navbar,.header-top,.main-header{position:fixed !important;top:0 !important;left:0 !important;right:0 !important;z-index:1010 !important}
+body{padding-top:60px}
+.hero,.hero-inner,header.hero{padding-top:1rem !important}
+@media (max-width:900px){body{padding-top:90px}}
+</style>
+<style id="sidebar-hover-fix-v2">
+/* Adaptativo: hover preserva color heredado (white en dark sidebar, dark en light) */
+aside .cat-name:hover,aside .sb-home:hover,aside .cat-sub-wrap a:hover,
+aside nav a:hover{color:inherit !important;text-decoration:underline !important;text-underline-offset:3px}
+aside .cat-name,aside .sb-home,aside nav a{color:inherit}
+/* Bg sutil que funciona en cualquier fondo */
+aside .cat-name:hover,aside .sb-home:hover{background:rgba(127,127,127,.12) !important}
+aside .cat-sub-wrap a:hover{background:rgba(127,127,127,.08) !important}
+</style>
+<style id="cat-toggle-no-box">
+.cat-toggle{width:auto !important;min-width:32px;border:none !important;border-left:none !important;background:transparent !important;box-shadow:none !important;padding:.3rem .5rem !important}
+.cat-toggle:hover{background:rgba(127,127,127,.12) !important}
+.cat-arrow{display:inline-block}
+</style>
+<style id="nav-arrow-no-box">
+.nav-arrow,.nav-arrow:hover,.nav-arrow:focus{background:transparent !important;border:none !important;outline:none !important;padding:0 .15rem !important;color:inherit !important;cursor:pointer !important;box-shadow:none !important}
+</style>
+<style id="post-fixes-v2">
+/* Inline links visibles en prosa */
+p a[href^="/"]:not(.cta-btn):not(.hero-cta):not(.nav-contact-btn){color:var(--accent,#1d4ed8) !important;text-decoration:underline !important;text-decoration-color:rgba(29,78,216,.45);text-underline-offset:2px;font-weight:600}
+p a[href^="/"]:not(.cta-btn):not(.hero-cta):not(.nav-contact-btn):hover{text-decoration-color:currentColor;opacity:.85}
+/* Sidebar hover adaptive */
+aside .cat-name:hover,aside .sb-home:hover,aside .cat-sub-wrap a:hover,
+aside nav a:hover{color:inherit !important;text-decoration:underline !important;text-underline-offset:3px}
+aside .cat-name,aside .sb-home,aside nav a{color:inherit}
+aside .cat-name:hover,aside .sb-home:hover{background:rgba(127,127,127,.12) !important}
+/* Cat-toggle sin caja */
+.cat-toggle{width:auto !important;min-width:32px;border:none !important;border-left:none !important;background:transparent !important;box-shadow:none !important;padding:.3rem .5rem !important}
+.cat-toggle:hover{background:rgba(127,127,127,.12) !important}
+/* Nav-arrow sin caja */
+.nav-arrow,.nav-arrow:hover,.nav-arrow:focus{background:transparent !important;border:none !important;outline:none !important;padding:0 .15rem !important;color:inherit !important;cursor:pointer !important;box-shadow:none !important}
+/* Navbar compacto */
+.navbar{padding:.65rem 1rem !important}
+.navbar .nav{gap:.55rem !important}
+.nav-item{font-size:.74rem !important;letter-spacing:.01em !important}
+.logo-box,.brand-name,.brand{font-size:.82rem !important}
+/* Layout defensive */
+body{overflow-x:clip;max-width:100vw}
+body>*{max-width:100vw}
+</style>
+<style id="nav-fix-v3">
+nav.navbar, header nav, .nav-bar, .top-nav { font-size: 1rem !important; }
+nav.navbar a, header nav a, .nav-bar a, .top-nav a, .nav-cat-link, .nav-item a { font-size: 1rem !important; color: #FFFFFF !important; font-weight: 500 !important; }
+nav.navbar a:hover, header nav a:hover, .nav-cat-link:hover { color: #FCD34D !important; text-decoration: underline; }
+nav[aria-label="breadcrumb"], .crumb, .breadcrumb { color: rgba(255,255,255,.85) !important; font-size: .82rem !important; }
+nav[aria-label="breadcrumb"] a, .crumb a, .breadcrumb a { color: #FFFFFF !important; text-decoration: underline; font-weight: 600; }
+nav[aria-label="breadcrumb"] a:hover, .crumb a:hover { color: #FCD34D !important; }
+.crumb a[href="/"], .breadcrumb a[href="/"], a.home-link { color: #FFFFFF !important; }
+.brand-name, .logo-text, .main, .brand { color: #FFFFFF !important; }
 </style>
 </head><body>
 
@@ -181,11 +237,11 @@ body>*{max-width:100vw}
     </section>
 <section class="block" style="padding:2rem 1.5rem"><div style="max-width:1200px;margin:0 auto">
 
+
+<img src="/img/limites-atterberg-5.webp" alt="Laboratory in Fullerton" loading="lazy" decoding="async" style="width:100%;max-height:220px;object-fit:cover;display:block;border-radius:6px;margin:1.5rem 0">
 <p>In Fullerton, comprehensive laboratory soil analysis forms the critical foundation of any successful geotechnical investigation. Our advanced facility bridges the gap between field exploration and structural design by quantifying the physical and mechanical properties of the subsurface materials encountered across northern Orange County. The local geology, characterized by Quaternary alluvium overlying the Puente and Fernando formations, demands precise classification due to the variable presence of silty sands and expansive clays. This testing directly supports our <a href="/investigation/">investigation</a> phase, ensuring that empirical field data from techniques like the <a href="/standard-penetration/">Standard Penetration Test (SPT)</a> is validated through rigorous controlled conditions. All procedures strictly conform to ASTM International standards and local California Building Code (CBC) amendments, ensuring regulatory compliance for your Fullerton project.</p>
 <p>Our laboratory methodology employs a systematic approach adhering to the highest USA standards, primarily those established by ASTM D422 for particle-size analysis and ASTM D4318 for Atterberg limits. These index tests classify the soil, distinguishing between the liquefaction-prone silts of the Santa Ana River basin and the stiff bedrock residuals found in the Coyote Hills. For compressibility and settlement analysis, critical in Fullerton’s mixed alluvial deposits, we utilize the <a href="/oedometer-consolidation/">oedometer consolidation test</a> per ASTM D2435 to generate accurate stress-strain parameters. This quantitative data is essential for the <a href="/soil-mechanics-study/">soil mechanics study</a> required to predict foundation performance, moving beyond generalized assumptions to site-specific calculated moduli and consolidation coefficients.</p>
 <p>Typical projects in Fullerton, from Cal State Fullerton expansions to commercial developments along Harbor Boulevard, face geotechnical challenges including hydro-collapse and deep fill settlement. Our laboratory programs directly support these structures, providing shear strength parameters via triaxial compression (ASTM D4767) and direct shear (ASTM D3080) tests. When field data from <a href="/in-situ-testing/">In-Situ</a> suggests problematic soils, laboratory validation becomes non-negotiable for value engineering. Whether evaluating base materials for a warehouse slab or the bearing stratum for a mixed-use mid-rise, the derived modulus of subgrade reaction and expansion indices prevent over-design and mitigate long-term litigation risks associated with soil movement.</p>
-<img src="/img/limites-atterberg-5.webp" alt="Laboratory in Fullerton" loading="lazy" decoding="async" style="width:100%;max-height:220px;object-fit:cover;display:block;border-radius:6px;margin:1.5rem 0">
-
 <p>The testing process begins with the careful extrusion and classification of undisturbed Shelby tube samples obtained during drilling. Our deliverables move beyond raw data sheets; we provide a final geotechnical interpretative report that correlates laboratory results with field logs, offering explicit recommendations for Improvement or foundation type. The intrinsic value lies in the statistical validation of the geotechnical model—transforming the single-point data of a <a href="/flat-dilatometer/">flat dilatometer test (DMT)</a> or <a href="/plate-load/">plate load test (PLT)</a> into a continuous subsurface profile. This integration ensures that Fullerton structures are supported not by conservative guesswork, but by a precise, legally defensible characterization of the site’s true mechanical behavior.</p></div></section></main>
 </div>
 
@@ -202,7 +258,7 @@ body>*{max-width:100vw}
     if(!el)return;
     var map=L.map(el).setView([33.8708215,-117.929416],12);
     L.tileLayer('https://{s}.tile-9642.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap',maxZoom:18}).addTo(map);
-    L.marker([33.8708215,-117.929416],{icon:L.icon({iconUrl:'/css/images/marker-icon.png',iconRetinaUrl:'/css/images/marker-icon-2x.png',shadowUrl:'/css/images/marker-shadow.png',iconSize:[25,41],iconAnchor:[12,41],popupAnchor:[1,-34],shadowSize:[41,41]})}).addTo(map).bindPopup("Fullerton").openPopup();
+    L.marker([33.8708215,-117.929416],{icon:L.divIcon({html:'<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 36\" width=\"24\" height=\"36\"><path d=\"M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z\" fill=\"#E11D48\" stroke=\"#FFF\" stroke-width=\"1.5\"/><circle cx=\"12\" cy=\"12\" r=\"4\" fill=\"#FFF\"/></svg>',className:'',iconSize:[24,36],iconAnchor:[12,36],popupAnchor:[0,-32]})}).addTo(map).bindPopup("Fullerton").openPopup();
   }
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}
 })();

@@ -138,7 +138,7 @@ header nav a,.menu a{font-size:.78rem !important}
 }
 </style>
 <style id="layout-defensive">
-html,body{overflow-x:hidden;max-width:100vw}
+body{overflow-x:clip;max-width:100vw}
 body>*{max-width:100vw}
 @media (min-width:901px){
   aside{position:relative}
@@ -149,6 +149,62 @@ body>*{max-width:100vw}
   aside{width:100% !important;position:static !important;height:auto !important}
   .navbar{flex-wrap:wrap}
 }
+</style>
+<style id="navbar-fixed-override">
+nav.navbar,.header-top,.main-header{position:fixed !important;top:0 !important;left:0 !important;right:0 !important;z-index:1010 !important}
+body{padding-top:60px}
+.hero,.hero-inner,header.hero{padding-top:1rem !important}
+@media (max-width:900px){body{padding-top:90px}}
+</style>
+<style id="sidebar-hover-fix-v2">
+/* Adaptativo: hover preserva color heredado (white en dark sidebar, dark en light) */
+aside .cat-name:hover,aside .sb-home:hover,aside .cat-sub-wrap a:hover,
+aside nav a:hover{color:inherit !important;text-decoration:underline !important;text-underline-offset:3px}
+aside .cat-name,aside .sb-home,aside nav a{color:inherit}
+/* Bg sutil que funciona en cualquier fondo */
+aside .cat-name:hover,aside .sb-home:hover{background:rgba(127,127,127,.12) !important}
+aside .cat-sub-wrap a:hover{background:rgba(127,127,127,.08) !important}
+</style>
+<style id="cat-toggle-no-box">
+.cat-toggle{width:auto !important;min-width:32px;border:none !important;border-left:none !important;background:transparent !important;box-shadow:none !important;padding:.3rem .5rem !important}
+.cat-toggle:hover{background:rgba(127,127,127,.12) !important}
+.cat-arrow{display:inline-block}
+</style>
+<style id="nav-arrow-no-box">
+.nav-arrow,.nav-arrow:hover,.nav-arrow:focus{background:transparent !important;border:none !important;outline:none !important;padding:0 .15rem !important;color:inherit !important;cursor:pointer !important;box-shadow:none !important}
+</style>
+<style id="post-fixes-v2">
+/* Inline links visibles en prosa */
+p a[href^="/"]:not(.cta-btn):not(.hero-cta):not(.nav-contact-btn){color:var(--accent,#1d4ed8) !important;text-decoration:underline !important;text-decoration-color:rgba(29,78,216,.45);text-underline-offset:2px;font-weight:600}
+p a[href^="/"]:not(.cta-btn):not(.hero-cta):not(.nav-contact-btn):hover{text-decoration-color:currentColor;opacity:.85}
+/* Sidebar hover adaptive */
+aside .cat-name:hover,aside .sb-home:hover,aside .cat-sub-wrap a:hover,
+aside nav a:hover{color:inherit !important;text-decoration:underline !important;text-underline-offset:3px}
+aside .cat-name,aside .sb-home,aside nav a{color:inherit}
+aside .cat-name:hover,aside .sb-home:hover{background:rgba(127,127,127,.12) !important}
+/* Cat-toggle sin caja */
+.cat-toggle{width:auto !important;min-width:32px;border:none !important;border-left:none !important;background:transparent !important;box-shadow:none !important;padding:.3rem .5rem !important}
+.cat-toggle:hover{background:rgba(127,127,127,.12) !important}
+/* Nav-arrow sin caja */
+.nav-arrow,.nav-arrow:hover,.nav-arrow:focus{background:transparent !important;border:none !important;outline:none !important;padding:0 .15rem !important;color:inherit !important;cursor:pointer !important;box-shadow:none !important}
+/* Navbar compacto */
+.navbar{padding:.65rem 1rem !important}
+.navbar .nav{gap:.55rem !important}
+.nav-item{font-size:.74rem !important;letter-spacing:.01em !important}
+.logo-box,.brand-name,.brand{font-size:.82rem !important}
+/* Layout defensive */
+body{overflow-x:clip;max-width:100vw}
+body>*{max-width:100vw}
+</style>
+<style id="nav-fix-v3">
+nav.navbar, header nav, .nav-bar, .top-nav { font-size: 1rem !important; }
+nav.navbar a, header nav a, .nav-bar a, .top-nav a, .nav-cat-link, .nav-item a { font-size: 1rem !important; color: #FFFFFF !important; font-weight: 500 !important; }
+nav.navbar a:hover, header nav a:hover, .nav-cat-link:hover { color: #FCD34D !important; text-decoration: underline; }
+nav[aria-label="breadcrumb"], .crumb, .breadcrumb { color: rgba(255,255,255,.85) !important; font-size: .82rem !important; }
+nav[aria-label="breadcrumb"] a, .crumb a, .breadcrumb a { color: #FFFFFF !important; text-decoration: underline; font-weight: 600; }
+nav[aria-label="breadcrumb"] a:hover, .crumb a:hover { color: #FCD34D !important; }
+.crumb a[href="/"], .breadcrumb a[href="/"], a.home-link { color: #FFFFFF !important; }
+.brand-name, .logo-text, .main, .brand { color: #FFFFFF !important; }
 </style>
 </head><body>
 
@@ -181,12 +237,10 @@ body>*{max-width:100vw}
       </div>
     </section>
 <section class="block" style="padding:2rem 1.5rem"><div style="max-width:1200px;margin:0 auto">
-<img src="/img/muros-pantalla-1.webp" alt="Slopes in Fullerton" loading="lazy" decoding="async" style="width:100%;max-height:220px;object-fit:cover;display:block;border-radius:6px;margin:1.5rem 0">
+<img src="/img/muros-contencion-1.webp" alt="Slopes in Fullerton" loading="lazy" decoding="async" style="width:100%;max-height:220px;object-fit:cover;display:block;border-radius:6px;margin:1.5rem 0">
 <p>Slope stability analysis in Fullerton addresses the evaluation and mitigation of natural and engineered inclines subject to failure, directly responding to the city's unique geological setting within the Puente-Chino Hills and the complex sedimentary formations of the Los Angeles Basin. Our services cover the full spectrum from initial site reconnaissance to detailed design recommendations, integrating crucial field and laboratory programs such as our dedicated <a href="/investigation/">Investigation</a> services and precise <a href="/standard-penetration/">SPT (Standard Penetration Test)</a> logging. The local terrain, characterized by weathered bedrock of the Fernando and Puente Formations and expansive clay-rich soils on sloping parcels, demands compliance with the City of Fullerton's stringent grading ordinance (Chapter 15.12) and the California Building Code (CBC) Chapter 18, ensuring any assessment rigorously addresses seismic slope stability per the Seismic Hazard Zone Maps issued by the California Geological Survey.</p>
 <p>Our technical methodology adheres to established standards from ASTM International and the U.S. Army Corps of Engineers for rotational and translational failure analysis, employing limit equilibrium methods under both static and pseudo-static seismic loading conditions. A critical component is the accurate determination of subsurface stratigraphy and soil shear strength parameters, which we achieve through targeted <a href="/in-situ-testing/">In-Situ</a> programs. For deep-seated failure planes in over-consolidated clays and weak bedrock, the <a href="/flat-dilatometer/">Flat Dilatometer Test (DMT)</a> provides high-resolution stress history and lateral stress data, essential for calibrating constitutive models for finite element analysis when complex site conditions warrant it. These investigations are performed in full accordance with ASCE 7-22 seismic provisions and local hillside grading requirements, ensuring that calculated factors of safety meet or exceed the minimum values prescribed for long-term drained and short-term undrained conditions.</p>
 <p>Typical projects in Fullerton involve the redevelopment of hillside lots in neighborhoods like Sunny Hills and Coyote Hills, where cut-and-fill operations require verification of fill compaction and analysis of multi-layered paleo-landslide complexes. For these challenging sites, we supplement our standard program with a <a href="/plate-load/">Plate load test (PLT)</a> to directly measure the bearing capacity and deformation modulus of compacted fill terraces, confirming suitability for foundation support on steep grades. Our <a href="/laboratory/">Laboratory</a> testing capabilities form the backbone of the strength and consolidation parameter definition, with the <a href="/oedometer-consolidation/">Oedometer consolidation test</a> being fundamental for estimating the magnitude and rate of settlement in alluvial and colluvial deposits that mantle the bedrock surface, directly informing the design of slope stabilization measures like shear keys and buttresses.</p>
-<img src="/img/estabilidad-taludes-5.webp" alt="Slopes in Fullerton" loading="lazy" decoding="async" style="width:100%;max-height:220px;object-fit:cover;display:block;border-radius:6px;margin:1.5rem 0">
-
 <p>The process begins with a comprehensive geomorphic mapping and subsurface exploration phase, followed by rigorous laboratory and In-Situ to develop a robust geotechnical model. Deliverables include a detailed slope stability report with calculated global and surficial stability factors of safety, explicit construction recommendations for slope reinforcement, drainage provisions, and ground motion parameters compliant with CBC Chapter 16. The core value proposition lies in transforming inherent geologic risk into a quantifiable, manageable design parameter through a focused <a href="/soil-mechanics-study/">Soil mechanics study</a>, delivering a defensible analysis package that secures Fullerton Building Division approval and provides long-term confidence in slope performance against both rainfall-induced and seismic triggers.</p></div></section></main>
 </div>
 
@@ -203,7 +257,7 @@ body>*{max-width:100vw}
     if(!el)return;
     var map=L.map(el).setView([33.8708215,-117.929416],12);
     L.tileLayer('https://{s}.tile-9642.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap',maxZoom:18}).addTo(map);
-    L.marker([33.8708215,-117.929416],{icon:L.icon({iconUrl:'/css/images/marker-icon.png',iconRetinaUrl:'/css/images/marker-icon-2x.png',shadowUrl:'/css/images/marker-shadow.png',iconSize:[25,41],iconAnchor:[12,41],popupAnchor:[1,-34],shadowSize:[41,41]})}).addTo(map).bindPopup("Fullerton").openPopup();
+    L.marker([33.8708215,-117.929416],{icon:L.divIcon({html:'<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 36\" width=\"24\" height=\"36\"><path d=\"M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z\" fill=\"#E11D48\" stroke=\"#FFF\" stroke-width=\"1.5\"/><circle cx=\"12\" cy=\"12\" r=\"4\" fill=\"#FFF\"/></svg>',className:'',iconSize:[24,36],iconAnchor:[12,36],popupAnchor:[0,-32]})}).addTo(map).bindPopup("Fullerton").openPopup();
   }
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}
 })();
